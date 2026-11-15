@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bug Family</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  /* One light look on purpose: ladybugs need a light ground. */
+  :root { --bg: #f3f6ef; --ink: #2b2622; --ground: #c9d8b6; color-scheme: light }
+  html, body { height: 100%; margin: 0 }
+  body { background: var(--bg); display: grid; place-items: center }
+  svg { width: min(88vw, 640px); height: auto }
+</style>
+</head>
+<body>
+<svg viewBox="0 80 476 112" role="img" aria-label="A family of four ladybugs walking in a row">
+  <defs>
+    <!-- One bug, facing right, feet at y=62. The shell takes currentColor. -->
+    <symbol id="bug" viewBox="0 0 120 66" overflow="visible">
+      <g stroke="var(--ink)" stroke-width="4" stroke-linecap="round" fill="none">
+        <path d="M30 48 L22 62"/>
+        <path d="M52 50 L52 63"/>
+        <path d="M74 48 L82 62"/>
+        <path d="M95 33 Q101 16 112 15"/>
+        <path d="M89 32 Q90 13 99 8"/>
+      </g>
+      <circle cx="112" cy="15" r="3.5" fill="var(--ink)"/>
+      <circle cx="99" cy="8" r="3.5" fill="var(--ink)"/>
+      <circle cx="93" cy="42" r="12" fill="var(--ink)"/>
+      <circle cx="98" cy="39" r="3" fill="var(--bg)"/>
+      <path d="M12 52 A40 38 0 0 1 92 52 Z" fill="currentColor"/>
+      <path d="M52 14 V52" stroke="var(--ink)" stroke-width="3"/>
+      <g fill="var(--ink)">
+        <circle cx="34" cy="38" r="6.5"/>
+        <circle cx="70" cy="38" r="6.5"/>
+        <circle cx="40" cy="24" r="4.5"/>
+        <circle cx="64" cy="24" r="4.5"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <rect x="4" y="172" width="468" height="14" rx="7" fill="var(--ground)"/>
+
+  <!-- Biggest to smallest, feet on the ground at y=174 (y = 174 - 0.955 * height) -->
+  <use href="#bug" x="316" y="94.7"  width="150" height="83" color="#d4402c"/>
+  <use href="#bug" x="170" y="104.3" width="132" height="73" color="#e8862a"/>
+  <use href="#bug" x="76"  y="130"   width="84"  height="46" color="#efbd2c"/>
+  <use href="#bug" x="10"  y="143.4" width="58"  height="32" color="#e2665a"/>
+</svg>
+</body>
+</html>
